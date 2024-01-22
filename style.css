@@ -1,0 +1,291 @@
+/* 基本樣式 */
+body {
+  font-family: 'Open Sans', sans-serif; /* 更現代的字體 */
+  background: #121212; /* 簡潔背景 */
+  color: #e0e0e0; /* 柔和的文字顏色 */
+  margin: 0;
+  padding: 0;
+  background-image: url('mod.png');
+  background-size: cover; /* Adjust the sizing as needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: Makes the background fixed when scrolling */
+}
+
+.container {
+  width: 90%;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+/* 頁眉 */
+header {
+  background: #242424;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: #40c4ff; /* 科技感藍色 */
+}
+
+/* 內容區塊樣式 */
+.about, .work, .contact {
+  padding: 25px;
+  margin-top: 25px;
+  background: #2a2a2a;
+  border-left: 5px solid #40c4ff;
+}
+
+/* 聯絡表單樣式 */
+.contact-form {
+  max-width: 700px;
+  margin: auto;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 95%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  background: #1e1e1e;
+  border: 1px solid #444444;
+  color: #f0f0f0;
+}
+
+/* 提交按鈕樣式 */
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #40c4ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+}
+
+/* 聯絡按鈕樣式 */
+.contact-buttons {
+  text-align: right;
+  padding: 15px 0;
+  position: absolute;
+  right: 12%;
+  top: 25px;
+}
+
+.contact-button img {
+  height: 45px;
+  width: auto;
+}
+
+/* 社群媒體按鈕樣式 */
+.contact-button {
+  display: inline-block;
+  margin: 0 5px; /* 調整按鈕間距 */
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: transparent; /* 透明背景 */
+  transition: opacity 0.3s ease; /* 平滑過渡效果 */
+}
+
+.contact-button:hover {
+  opacity: 0.7; /* 滑鼠懸停時半透明 */
+}
+
+/* 3D模型容器樣式 */
+.sketchfab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+}
+
+.sketchfab-container iframe {
+  width: 80%;
+  height: 80%;
+}
+
+/* 頁腳樣式 */
+footer {
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #30a9de;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* 技能樹樣式 */
+.tree {
+  display: inline-block;
+  border-left: 2px solid #555;
+  padding-left: 10px;
+}
+
+.tree ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tree ul li {
+  margin: 10px 0;
+}
+
+.node {
+  background-color: #555;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.node:hover {
+  background-color: #777;
+}
+
+/* 技能展示樣式 */
+#skills-tree {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-branch {
+  text-align: left;
+  flex: 1 0 45%; /* 每行兩個技能分支 */
+  margin: 10px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.skill-branch ul {
+  padding: 0;
+}
+
+.skill-branch li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.skill-icon {
+  margin: 5px;
+  text-align: center;
+  flex: 1 0 30%;
+}
+
+.skill-icon img {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 藝術作品樣式 */
+.smart-art {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.art-item {
+  background-color: #0b89be;
+  color: white;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+  font-size: 1.2em;
+  border-left: 4px solid #30a9de;
+}
+
+.art-description {
+  display: block;
+  background-color: #333;
+  color: #d4d4d4;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 1.0em;
+}
+
+.art-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* 專案容器樣式 */
+.project-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  width: 30%;
+  margin: 10px;
+  background-color: #0c81ca;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.project-item img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.project-item h3 {
+  margin: 10px 0;
+}
+
+.project-item p {
+  color: #333;
+}
+
+/* 其他自定義樣式可以根據需要添加 */
+.statistics-container {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #333;
+  color: #fff;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 這裡設定每行三個項目 */
+  gap: 20px; /* 項目之間的間隙 */
+}
+
+.statistic-item {
+  align-items: center;
+  margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr); /* 在中等屏幕上每行兩個項目 */
+  }
+}
+
+@media (max-width: 768px) {
+  .statistics-grid {
+    grid-template-columns: 1fr; /* 在小屏幕上每行一個項目 */
+  }
+}

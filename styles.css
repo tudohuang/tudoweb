@@ -1,0 +1,26 @@
+.tree {
+    display: inline-block;
+    border-left: 2px solid #555;
+    padding-left: 10px;
+}
+
+.tree ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tree ul li {
+    margin: 10px 0;
+}
+
+.node {
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.node:hover {
+    background-color: #777;
+}
