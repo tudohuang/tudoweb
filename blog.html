@@ -1,81 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
-  <style>
-/* 基本樣式 */
+    <meta charset="UTF-8">
+    <title>筆記</title>
+    <style>
+
 body {
-  font-family: 'Open Sans', sans-serif; /* 更現代的字體 */
-  background: #121212; /* 簡潔背景 */
-  color: #e0e0e0; /* 柔和的文字顏色 */
-  margin: 0;
-  padding: 0;
-  background-image: url('mod.png');
-  background-size: cover; /* Adjust the sizing as needed */
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Optional: Makes the background fixed when scrolling */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
 }
 
-.container {
-  width: 90%;
-  margin: 30px auto;
-  overflow: hidden;
+h1 {
+    text-align: center;
 }
 
-/* 頁眉 */
-header {
-  background: #242424;
-  padding: 20px;
-  text-align: center;
-  font-size: 30px;
-  color: #40c4ff; /* 科技感藍色 */
-}
-.statistics-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 每行三個項目 */
-  gap: 20px; /* 項目之間的間隙 */
-  padding: 20px; /* 內邊距 */
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 iframe {
-  width: 100%; /* 調整 iframe 寬度為 100% 相對於它們的容器 */
-  height: 600px; /* 固定高度 */
-  border: none; /* 可選擇移除邊框 */
+    width: 30%;
+    min-width: 300px;
+    height: 400px; 
+    margin: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* 確保在小屏幕上適當顯示 */
-@media (max-width: 768px) {
-  .statistics-grid {
-    grid-template-columns: 1fr; /* 小屏幕上每行一個項目 */
-  }
+@media (max-width: 800px) {
+    iframe {
+        width: 100%; 
+    }
 }
 
-    
-    /* Add additional CSS styles for your website's content, such as text and layout */
-  </style>
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+      footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+    </style>
 </head>
 <body>
-  <!-- Your website content goes here -->
-  <header>
-    <h1>Welcome to Tudo's Blog</h1>
-  </header>
-  <main>
+    <h1>嵌入的HackMD筆記</h1>
+    <div class="notes-container">
+        <div onclick="openModal('https://hackmd.io/@Tudohuang/BybMePIxR')" class="note">
+            <iframe src="https://hackmd.io/@Tudohuang/BybMePIxR" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div onclick="openModal('https://hackmd.io/@Tudohuang/ryH1mP-gA')" class="note">
+            <iframe src="https://hackmd.io/@Tudohuang/ryH1mP-gA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div onclick="openModal('https://hackmd.io/@Tudohuang/r1gC5vw0x0')" class="note">
+            <iframe src="https://hackmd.io/@Tudohuang/r1gC5vw0x0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div onclick="openModal('https://hackmd.io/@Tudohuang/B1j7Mg3lA')" class="note">
+            <iframe src="https://hackmd.io/@Tudohuang/B1j7Mg3lA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div onclick="openModal('https://hackmd.io/@Tudohuang/H1CRFQRFa')" class="note">
+            <iframe src="https://hackmd.io/@Tudohuang/H1CRFQRFa" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
-      <div class="statistics-grid">
-      <iframe src="https://hackmd.io/@WrT0YpfrTJSBnsYBGzPxBA/BkkWA5UKa" width="300" height="400"></iframe>
-      <iframe src="https://hackmd.io/I8Z69Ew6SnOp5TovbbTYOQ" width="350" height="400"></iframe>
-      <iframe src="https://hackmd.io/TaVc_U3oTqSuBmm44qlWiQ" width="350" height="400"></iframe>
-      <iframe src="https://hackmd.io/M689CE7vSbCZkU0CMqxPMg" width="350" height="400"></iframe>
-        <script src="https://gist.github.com/tudohuang/294f3c66661698af1ee2ee8c98724f41.js"></script>
- 
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe class="modal-content" id="modalIframe"></iframe>
+    </div>
 
-      </div>
-    </section>
-  </main>
-  <footer>
-    &copy; 2024 Tudo_huang 
-  </footer>
+    <script>
+function openModal(url) {
+    document.getElementById('modalIframe').src = url;
+    document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+}
+
+
+    </script>
+
+      <footer>
+        <p>版權所有 © 2024</p>
+    </footer>
 </body>
 </html>
